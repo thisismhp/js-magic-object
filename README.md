@@ -1,5 +1,12 @@
 # Javascrpit magic object library
 
+## Install
+
+```bash
+npm install magic-object
+```
+
+
 ## Usage
 
 ```bash
