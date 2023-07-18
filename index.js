@@ -1,5 +1,5 @@
 module.exports = class MagicObject {
-    constructor(func, options = {}) {
+    constructor(func) {
 
         const pathArrayHolderName = '_'.repeat(20);
 
@@ -9,7 +9,7 @@ module.exports = class MagicObject {
 
                 let proxy;
 
-                if (options.isAsync) {
+                if (func.constructor.name === 'AsyncFunction') {
                     proxy = new Proxy(async (...args) => {
                         return await func(proxy[pathArrayHolderName], args);
                     }, handler);
