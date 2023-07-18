@@ -15,24 +15,18 @@ const MagicObject = require('magic-object');
 
 ```bash
 const magicObject = new MagicObject((path, args) => {
-
-}, {
-    isAsync: false
+    return {path, args};
 });
+
+console.log(magicObject.foo.bar(1)); // output: {path: ['foo', 'bar'], args: [1]}
 ``` 
 
 ### Or
 
 ```bash
 const magicObject = new MagicObject(async (path, args) => {
-
-}, {
-    isAsync: true
+    return {path, args};
 });
-``` 
 
-```bash
-
-magicObject.foo.bar.some(1, 'string', {}, [], null);
-
+console.log(await magicObject.foo.bar(1)); // output: {path: ['foo', 'bar'], args: [1]}
 ```
