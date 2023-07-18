@@ -21,7 +21,7 @@ const magicObject = new MagicObject((path, args) => {
 console.log(magicObject.foo.bar(1)); // output: {path: ['foo', 'bar'], args: [1]}
 ``` 
 
-### Or
+### Or Async usage
 
 ```bash
 const magicObject = new MagicObject(async (path, args) => {
